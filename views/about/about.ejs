@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Mawono's Blossom | Coastal Treasures from Kilifi</title>
+    <link rel="icon" type="image/jpg" href="favicon.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo-font {
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .coastal-pattern {
+            background-image: repeating-linear-gradient(
+                45deg,
+                #0ea5e9 0px,
+                #0ea5e9 15px,
+                #f59e0b 15px,
+                #f59e0b 30px,
+                #f43f5e 30px,
+                #f43f5e 45px
+            );
+        }
+        
+        .team-card {
+            transform: translateY(0);
+            transition: all 0.4s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #f43f5e;
+        }
+
+        .timeline-item:last-child::before {
+            height: 50%;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: #f43f5e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 10;
+        }
+
+        .values-card {
+            transition: all 0.3s ease;
+        }
+        
+        .values-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-slate-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <span class="logo-font text-3xl text-rose-600">Mawono's Blossom</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="font-medium hover:text-rose-600 transition-colors duration-300">Home</a>
+                    <a href="/gallery" class="font-medium hover:text-rose-600 transition-colors duration-300">Gallery</a>
+                    <a href="/shop" class="font-medium hover:text-rose-600 transition-colors duration-300">Shop</a>
+                    <a href="/about" class="font-medium text-rose-600 transition-colors duration-300">About Us</a>
+                    <a href="/contact" class="font-medium hover:text-rose-600 transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-slate-700 hover:text-rose-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Cart and Account -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/coming.html" class="text-slate-700 hover:text-rose-600 transition-colors">
+                        <i class="far fa-heart text-xl"></i>
+                    </a>
+                    <a href="/coming.html" class="text-slate-700 hover:text-rose-600 transition-colors">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                    </a>
+                    <a href="/coming.html" class="text-slate-700 hover:text-rose-600 transition-colors">
+                        <i class="far fa-user text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-rose-500 to-amber-500 py-20">
+        <div class="absolute inset-0 coastal-pattern opacity-10"></div>
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Story</h1>
+                <p class="text-xl opacity-90">Discover the heart and soul behind Mawono's Blossom</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Our Mission -->
+    <div class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                <p class="text-gray-700 mb-4">
+                    At Mawono's Blossom, our mission is to preserve and celebrate the rich artistic heritage of Kenya's coastal communities while providing sustainable livelihoods for local artisans and their families.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    We believe that traditional craftsmanship deserves recognition on the global stage, and we're committed to sharing these authentic cultural treasures with the world.
+                </p>
+                <p class="text-gray-700 mb-6">
+                    Every piece in our collection tells a story - of our heritage, of skilled hands that created it, and of the coastal landscapes that inspire our designs. By choosing Mawono's, you become part of this continuing story.
+                </p>
+                <div class="flex gap-4">
+                    <div class="bg-amber-100 p-4 rounded-lg text-center flex-1">
+                        <span class="text-amber-600 text-3xl font-bold">30+</span>
+                        <p class="text-gray-700">Local Artisans</p>
+                    </div>
+                    <div class="bg-rose-100 p-4 rounded-lg text-center flex-1">
+                        <span class="text-rose-600 text-3xl font-bold">100%</span>
+                        <p class="text-gray-700">Handcrafted</p>
+                    </div>
+                    <div class="bg-sky-100 p-4 rounded-lg text-center flex-1">
+                        <span class="text-sky-600 text-3xl font-bold">5+</span>
+                        <p class="text-gray-700">Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 lg:order-2 relative">
+                <div class="absolute -top-6 -right-6 w-24 h-24 coastal-pattern opacity-50 rounded-full"></div>
+                <img src="/api/placeholder/600/500" alt="Artisans at work" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Our Values -->
+    <div class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Values</h2>
+                <p class="text-gray-700">
+                    These principles guide everything we do at Mawono's Blossom, from sourcing materials to supporting our artisan community.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Authenticity -->
+                <div class="values-card bg-amber-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-certificate text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Authenticity</h3>
+                    <p class="text-gray-700">
+                        We honor traditional craftsmanship and techniques passed down through generations, ensuring every piece reflects true Kenyan coastal heritage.
+                    </p>
+                </div>
+                
+                <!-- Sustainability -->
+                <div class="values-card bg-teal-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-leaf text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Sustainability</h3>
+                    <p class="text-gray-700">
+                        We prioritize eco-friendly practices, using locally sourced, natural materials and minimizing environmental impact in all our operations.
+                    </p>
+                </div>
+                
+                <!-- Community Support -->
+                <div class="values-card bg-rose-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <div class="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hands-helping text-rose-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Community</h3>
+                    <p class="text-gray-700">
+                        We invest in our artisan community through fair wages, skills development, and programs that improve livelihoods and preserve cultural heritage.
+                    </p>
+                </div>
+                
+                <!-- Quality -->
+                <div class="values-card bg-blue-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Quality</h3>
+                    <p class="text-gray-700">
+                        We are committed to excellence in craftsmanship, carefully inspecting each piece to ensure the highest standard of quality and attention to detail.
+                    </p>
+                </div>
+                
+                <!-- Creativity -->
+                <div class="values-card bg-purple-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-paint-brush text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Creativity</h3>
+                    <p class="text-gray-700">
+                        We blend traditional designs with contemporary aesthetics, encouraging innovation while respecting cultural foundations and artistic expression.
+                    </p>
+                </div>
+                
+                <!-- Education -->
+                <div class="values-card bg-orange-50 rounded-xl shadow-md p-6 flex flex-col items-center text-center">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-book-open text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Education</h3>
+                    <p class="text-gray-700">
+                        We share the stories and cultural significance behind our products, educating customers about Kenyan coastal heritage and artisanal practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Our History -->
+    <div class="container mx-auto px-6 py-16">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">Our Journey</h2>
+            
+            <div class="space-y-12">
+                <!-- 2020 -->
+                <div class="timeline-item pl-12">
+                    <div class="timeline-marker">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-2">2020: Our Beginning</h3>
+                        <p class="text-gray-700 mb-4">
+                            Mawono's Blossom began as a small beach-side stall in Kilifi, founded by Maria Wachira with a vision to showcase authentic local crafts to tourists. Starting with just five artisans, we focused on cowrie shell jewelry and small coastal paintings.
+                        </p>
+                        <img src="/api/placeholder/500/300" alt="Our first shop" class="w-full h-auto rounded-lg mb-2">
+                    </div>
+                </div>
+                
+                <!-- 2021 -->
+                <div class="timeline-item pl-12">
+                    <div class="timeline-marker">
+                        <i class="fas fa-expand-alt"></i>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-2">2021: Growing Our Community</h3>
+                        <p class="text-gray-700 mb-4">
+                            We expanded our artisan network to include 15 local craftspeople and moved to our first permanent workshop location in Kilifi Town. This year marked the introduction of our Kikoy clothing and traditional hat collections.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 2022 -->
+                <div class="timeline-item pl-12">
+                    <div class="timeline-marker">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-2">2022: Going Digital</h3>
+                        <p class="text-gray-700 mb-4">
+                            We launched our online presence, making our coastal treasures available to customers beyond Kenya. This year also saw us hosting our first artisan workshop series, teaching traditional craft techniques to the next generation.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 2023 -->
+                <div class="timeline-item pl-12">
+                    <div class="timeline-marker">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-2">2023: Recognition & Expansion</h3>
+                        <p class="text-gray-700 mb-4">
+                            Mawono's Blossom received the "Best Cultural Enterprise" award at the Kenya Tourism Board awards. Our artisan community grew to 25 members, and we opened our gallery space to showcase larger art pieces and host cultural events.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 2024 -->
+                <div class="timeline-item pl-12">
+                    <div class="timeline-marker">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-2">2024: Community Initiatives</h3>
+                        <p class="text-gray-700 mb-4">
+                            We launched our artisan support program, providing business training and microloans to help our craftspeople grow their own enterprises. We also began partnerships with local schools to offer craft education programs.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 2025 -->
+                <div class="timeline-item pl-12">
+                    <div class="timeline-marker">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-2">2025: Today & Beyond</h3>
+                        <p class="text-gray-700 mb-4">
+                            Today, Mawono's Blossom proudly supports over 30 artisans and their families. We've expanded our workshop and gallery space, and continue to develop new collections that blend traditional craft techniques with contemporary designs. 
+                        </p>
+                        <p class="text-gray-700">
+                            As we look to the future, we're excited to further expand our global reach while deepening our community impact through sustainable practices and cultural preservation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Meet Our Team -->
+    <div class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">Meet Our Team</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-amber-50 rounded-xl shadow-md overflow-hidden">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="../images/founder.png" alt="Maria Wachira" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Maria Wachira</h3>
+                        <p class="text-rose-600 mb-3">Founder & Creative Director</p>
+                        <p class="text-gray-700 mb-4">
+                            Born and raised in Kilifi, Maria combines her passion for coastal artistry with a business background to lead Mawono's Blossom with heart and vision.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-gray-600 hover:text-rose-600">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-rose-600">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card bg-amber-50 rounded-xl shadow-md overflow-hidden">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="/api/placeholder/400/400" alt="John Mawono" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">John Mawono</h3>
+                        <p class="text-rose-600 mb-3">Master Craftsman</p>
+                        <p class="text-gray-700 mb-4">
+                            With over 30 years of experience in traditional Kenyan crafts, John leads our artisan training programs and ensures the authenticity of our products.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-gray-600 hover:text-rose-600">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card bg-amber-50 rounded-xl shadow-md overflow-hidden">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="/api/placeholder/400/400" alt="Amina Kazuri" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1">Amina Kazuri</h3>
+                        <p class="text-rose-600 mb-3">Design Director</p>
+                        <p class="text-gray-700 mb-4">
+                            Amina brings contemporary design expertise to our traditional crafts, creating unique pieces that honor heritage while appealing to modern aesthetics.
+                        </p>
+                        <div class="flex gap-3">
+                            <a href="#" class="text-gray-600 hover:text-rose-600">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-rose-600">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Artisan Spotlight -->
+    <div class="container mx-auto px-6 py-16">
+        <div class="bg-gradient-to-r from-blue-500 to-teal-500 rounded-xl p-8 md:p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">Artisan Spotlight</h2>
+                    <p class="text-white mb-4">
+                        Behind every product is a skilled artisan with a story. Meet the talented hands that bring our coastal treasures to life.
+                    </p>
+                    <p class="text-white mb-6">
+                        Our community of craftspeople preserves traditional techniques while supporting their families and communities. Each purchase directly benefits these artisans and helps sustain Kenya's rich cultural heritage.
+                    </p>
+                    <a href="/gallery.html#artisans" class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors">
+                        Meet More Artisans
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="/api/placeholder/300/300" alt="Artisan at work" class="rounded-lg shadow-lg w-full h-auto">
+                    <img src="/api/placeholder/300/300" alt="Artisan showing craft" class="rounded-lg shadow-lg w-full h-auto">
+                    <img src="/api/placeholder/300/300" alt="Craft creation process" class="rounded-lg shadow-lg w-full h-auto">
+                    <img src="/api/placeholder/300/300" alt="Finished product" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Community Impact -->
+    <div class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Impact</h2>
+                <p class="text-gray-700">
+                    At Mawono's Blossom, success means more than sales—it's about creating positive change in our community.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Economic Impact -->
+                <div class="bg-amber-50 rounded-xl shadow-md p-6">
+                    <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-hand-holding-usd text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center">Economic Empowerment</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Supporting 30+ artisans with sustainable income</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Providing fair wages above industry standards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Microloans program for artisan business growth</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Creating economic opportunities in rural areas</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Environmental Impact -->
+                <div class="bg-teal-50 rounded-xl shadow-md p-6">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-seedling text-teal-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center">Environmental Stewardship</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Using natural, locally-sourced materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Minimal waste production through upcycling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Sustainable harvesting practices for natural materials</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Tree planting initiatives to offset carbon footprint</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Cultural Impact -->
+                <div class="bg-rose-50 rounded-xl shadow-md p-6">
+                    <div class="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-history text-rose-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-center">Cultural Preservation</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Documenting traditional craft techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Youth apprenticeship program for skills transfer</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Community workshops and cultural events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Educational outreach about Kenyan coastal heritage</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 logo-font">Mawono's Blossom</h3>
+                    <p class="text-gray-400">
+                        Celebrating the beauty of Kenyan coastal craftsmanship through authentic, handcrafted treasures from Kilifi.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/about" class="hover:text-rose-500">About Us</a></li>
+                        <li><a href="/gallery" class="hover:text-rose-500">Gallery</a></li>
+                        <li><a href="/shop" class="hover:text-rose-500">Shop</a></li>
+                        <li><a href="/contact" class="hover:text-rose-500">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Visit Us</h3>
+                    <p class="text-gray-400">
+                        Mawono's Workshop & Gallery<br>
+                        Kilifi Town, Coastal Kenya<br>
+                        Open: Mon-Sat, 9am - 6pm
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex gap-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mawonos_blossom/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400">
+                        <i class="fas fa-phone mr-2"></i> +254 719 803 733
+                    </p>
+                    <p class="text-gray-400">
+                        <i class="fas fa-envelope mr-2"></i> info@mawonosblossom.co.ke
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2025 Mawono's Blossom. All rights reserved.
+                </p>
+                <div class="flex gap-4 text-gray-400 text-sm">
+                    <a href="/privacy" class="hover:text-rose-500">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-rose-500">Terms of Service</a>
+                    <a href="/shipping" class="hover:text-rose-500">Shipping & Returns</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>

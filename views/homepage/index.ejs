@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mawono's Blossom | Coastal Treasures from Kilifi</title>
+    <link rel="icon" type="image/jpg" href="favicon.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&display=swap');
         
@@ -51,6 +56,23 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Carousel Styles */
+        .swiper {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: #0ea5e9  !important;
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #0ea5e9  !important;
+        }
     </style>
 </head>
 <body class="bg-amber-50 text-slate-800">
@@ -81,13 +103,13 @@
                 
                 <!-- Cart and Account -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="/wishlist" class="text-slate-700 hover:text-rose-600 transition-colors">
+                    <a href="/coming.html" class="text-slate-700 hover:text-rose-600 transition-colors">
                         <i class="far fa-heart text-xl"></i>
                     </a>
-                    <a href="/cart" class="text-slate-700 hover:text-rose-600 transition-colors">
+                    <a href="/coming.html" class="text-slate-700 hover:text-rose-600 transition-colors">
                         <i class="fas fa-shopping-bag text-xl"></i>
                     </a>
-                    <a href="/account" class="text-slate-700 hover:text-rose-600 transition-colors">
+                    <a href="/coming.html" class="text-slate-700 hover:text-rose-600 transition-colors">
                         <i class="far fa-user text-xl"></i>
                     </a>
                 </div>
@@ -107,82 +129,159 @@
                 <p class="text-white text-xl mb-8 opacity-90">
                     Authentic, Unique & Beautiful artworks from the heart of Kilifi, Kenya
                 </p>
-                <a href="/gallery" class="inline-block bg-rose-600 hover:bg-rose-700 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl">
+                <a href="/gallery.html" class="inline-block bg-rose-600 hover:bg-rose-700 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl">
                     Explore Our Collection
                 </a>
             </div>
         </div>
     </div>
     
-    <!-- Product Categories -->
-    <div class="container mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold text-center mb-10">Our Coastal Treasures</h2>
+   <!-- Product Categories (Desktop) -->
+   <div class="container mx-auto px-6 py-16 hidden md:block">
+    <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Our Treasures</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Artworks -->
+        <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <a href="/gallery?category=artworks" class="block">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./images/painting.jpg" alt="Kenyan Artworks" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center bg-gradient-to-r from-sky-400 to-blue-500">
+                    <i class="fas fa-palette text-3xl text-white mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Artworks</h3>
+                    <p class="text-white/80 mt-2">Paintings, Carvings & Sculptures</p>
+                </div>
+            </a>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Hats -->
+        <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <a href="/gallery?category=hats" class="block">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./images/hat.jpg" alt="Kenyan Hats" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center bg-gradient-to-r from-amber-400 to-orange-500">
+                    <i class="fas fa-hat-cowboy text-3xl text-white mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Hats</h3>
+                    <p class="text-white/80 mt-2">Straw, Beaded & Traditional</p>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Dresses -->
+        <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+            <a href="/gallery?category=dresses" class="block">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./images/dress.jpg" alt="Kenyan Dresses" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center bg-gradient-to-r from-fuchsia-500 to-pink-500">
+                    <i class="fas fa-tshirt text-3xl text-white mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Dresses</h3>
+                    <p class="text-white/80 mt-2">Kikoy, Kitenge & Maasai Shukas</p>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Jewelry & Accessories -->
+        <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+            <a href="/gallery?category=jewelry" class="block">
+                <div class="aspect-square overflow-hidden">
+                    <img src="./images/jewelery.png" alt="Kenyan Jewelry" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6 text-center bg-gradient-to-r from-teal-400 to-emerald-500">
+                    <i class="fas fa-gem text-3xl text-white mb-3"></i>
+                    <h3 class="text-xl font-bold text-white">Jewelry</h3>
+                    <p class="text-white/80 mt-2">Cowrie Shell & Beaded Accessories</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Product Categories (Mobile Carousel) -->
+<div class="container mx-auto px-6 py-16 md:hidden">
+    <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Our Coastal Treasures</h2>
+    
+    <div class="swiper categorySwiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
             <!-- Artworks -->
-            <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <a href="/gallery?category=artworks" class="block">
-                    <div class="aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Kenyan Artworks" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 text-center bg-gradient-to-r from-sky-400 to-blue-500">
-                        <i class="fas fa-palette text-3xl text-white mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Artworks</h3>
-                        <p class="text-white/80 mt-2">Paintings, Carvings & Sculptures</p>
-                    </div>
-                </a>
+            <div class="swiper-slide">
+                <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <a href="/gallery?category=artworks" class="block">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="./images/painting.jpg" alt="Kenyan Artworks" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center bg-gradient-to-r from-sky-400 to-blue-500">
+                            <i class="fas fa-palette text-3xl text-white mb-3"></i>
+                            <h3 class="text-xl font-bold text-white">Artworks</h3>
+                            <p class="text-white/80 mt-2">Paintings, Carvings & Sculptures</p>
+                        </div>
+                    </a>
+                </div>
             </div>
             
             <!-- Hats -->
-            <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <a href="/gallery?category=hats" class="block">
-                    <div class="aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Kenyan Hats" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 text-center bg-gradient-to-r from-amber-400 to-orange-500">
-                        <i class="fas fa-hat-cowboy text-3xl text-white mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Hats</h3>
-                        <p class="text-white/80 mt-2">Straw, Beaded & Traditional</p>
-                    </div>
-                </a>
+            <div class="swiper-slide">
+                <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <a href="/gallery?category=hats" class="block">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="./images/hat.jpg" alt="Kenyan Hats" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center bg-gradient-to-r from-amber-400 to-orange-500">
+                            <i class="fas fa-hat-cowboy text-3xl text-white mb-3"></i>
+                            <h3 class="text-xl font-bold text-white">Hats</h3>
+                            <p class="text-white/80 mt-2">Straw, Beaded & Traditional</p>
+                        </div>
+                    </a>
+                </div>
             </div>
             
             <!-- Dresses -->
-            <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <a href="/gallery?category=dresses" class="block">
-                    <div class="aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Kenyan Dresses" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 text-center bg-gradient-to-r from-fuchsia-500 to-pink-500">
-                        <i class="fas fa-tshirt text-3xl text-white mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Dresses</h3>
-                        <p class="text-white/80 mt-2">Kikoy, Kitenge & Maasai Shukas</p>
-                    </div>
-                </a>
+            <div class="swiper-slide">
+                <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <a href="/gallery?category=dresses" class="block">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="./images/beach-dress.jpg" alt="Kenyan Dresses" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center bg-gradient-to-r from-fuchsia-500 to-pink-500">
+                            <i class="fas fa-tshirt text-3xl text-white mb-3"></i>
+                            <h3 class="text-xl font-bold text-white">Dresses</h3>
+                            <p class="text-white/80 mt-2">Kikoy, Kitenge & Maasai Shukas</p>
+                        </div>
+                    </a>
+                </div>
             </div>
             
             <!-- Jewelry & Accessories -->
-            <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <a href="/gallery?category=jewelry" class="block">
-                    <div class="aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Kenyan Jewelry" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6 text-center bg-gradient-to-r from-teal-400 to-emerald-500">
-                        <i class="fas fa-gem text-3xl text-white mb-3"></i>
-                        <h3 class="text-xl font-bold text-white">Jewelry</h3>
-                        <p class="text-white/80 mt-2">Cowrie Shell & Beaded Accessories</p>
-                    </div>
-                </a>
+            <div class="swiper-slide">
+                <div class="category-button bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <a href="/gallery?category=jewelry" class="block">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="./images/jewelery.png" alt="Kenyan Jewelry" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 text-center bg-gradient-to-r from-teal-400 to-emerald-500">
+                            <i class="fas fa-gem text-3xl text-white mb-3"></i>
+                            <h3 class="text-xl font-bold text-white">Jewelry</h3>
+                            <p class="text-white/80 mt-2">Cowrie Shell & Beaded Accessories</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
+        <!-- Add pagination and navigation -->
+        <div class="swiper-pagination mt-6"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-    
+</div>
+</div>
     <!-- Featured Products -->
     <div class="bg-white py-16">
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-center mb-10">
                 <h2 class="text-3xl font-bold">Featured Products</h2>
-                <a href="/shop" class="text-rose-600 hover:text-rose-700 font-medium flex items-center">
+                <a href="/coming.html" class="text-rose-600 hover:text-rose-700 font-medium flex items-center">
                     View All <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -191,11 +290,11 @@
                 <!-- Product 1 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative group">
                     <div class="relative aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Cowrie Shell Necklace" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <img src="./images/cowries-shell-necklace.jpg" alt="Cowrie Shell Necklace" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
                         
                         <!-- Quick actions -->
                         <div class="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <a href="/shop/product-1" class="flex-1 bg-rose-600 text-white text-center py-2 rounded-lg hover:bg-rose-700 transition-colors">
+                            <a href="/coming.html" class="flex-1 bg-rose-600 text-white text-center py-2 rounded-lg hover:bg-rose-700 transition-colors">
                                 View Details
                             </a>
                             <button class="w-10 h-10 bg-white text-rose-600 rounded-lg flex items-center justify-center hover:bg-rose-50">
@@ -232,7 +331,7 @@
                 <!-- Product 2 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative group">
                     <div class="relative aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Beaded Maasai Hat" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <img src="./images/hat.jpg" alt="Hat" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
                         
                         <div class="absolute top-4 left-4 bg-rose-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Sale
@@ -240,7 +339,7 @@
                         
                         <!-- Quick actions -->
                         <div class="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <a href="/shop/product-2" class="flex-1 bg-rose-600 text-white text-center py-2 rounded-lg hover:bg-rose-700 transition-colors">
+                            <a href="/coming.html" class="flex-1 bg-rose-600 text-white text-center py-2 rounded-lg hover:bg-rose-700 transition-colors">
                                 View Details
                             </a>
                             <button class="w-10 h-10 bg-white text-rose-600 rounded-lg flex items-center justify-center hover:bg-rose-50">
@@ -265,7 +364,7 @@
                             </div>
                         </div>
                         
-                        <h3 class="font-semibold text-gray-800 mb-1">Beaded Maasai Hat</h3>
+                        <h3 class="font-semibold text-gray-800 mb-1">Handcrafted Hat</h3>
                         <p class="text-sm text-gray-600 mb-2">Traditional beaded hat with vibrant colors</p>
                         
                         <div class="flex items-baseline gap-2">
@@ -278,11 +377,11 @@
                 <!-- Product 3 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative group">
                     <div class="relative aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Kikoy Beach Dress" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <img src="./images/beach-dress.jpg" alt="Kikoy Beach Dress" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
                         
                         <!-- Quick actions -->
                         <div class="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <a href="/shop/product-3" class="flex-1 bg-rose-600 text-white text-center py-2 rounded-lg hover:bg-rose-700 transition-colors">
+                            <a href="/coming.html" class="flex-1 bg-rose-600 text-white text-center py-2 rounded-lg hover:bg-rose-700 transition-colors">
                                 View Details
                             </a>
                             <button class="w-10 h-10 bg-white text-rose-600 rounded-lg flex items-center justify-center hover:bg-rose-50">
@@ -307,7 +406,7 @@
                             </div>
                         </div>
                         
-                        <h3 class="font-semibold text-gray-800 mb-1">Kikoy Beach Dress</h3>
+                        <h3 class="font-semibold text-gray-800 mb-1">Aesthetic Beach Dress</h3>
                         <p class="text-sm text-gray-600 mb-2">Lightweight cotton kikoy dress, perfect for the beach</p>
                         
                         <div class="mt-2">
@@ -319,7 +418,7 @@
                 <!-- Product 4 -->
                 <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative group">
                     <div class="relative aspect-square overflow-hidden">
-                        <img src="/api/placeholder/500/500" alt="Coastal Painting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <img src="./images/ke-painting.jpg" alt="Coastal Painting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
                         
                         <!-- Quick actions -->
                         <div class="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -361,7 +460,7 @@
     </div>
     
     <!-- Our Story Section -->
-    <div class="container mx-auto px-6 py-16">
+    <div class="container mx-auto px-6 py-16" id="about">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-3xl font-bold mb-6">Our Story</h2>
@@ -378,7 +477,7 @@
             <div class="relative">
                 <div class="absolute -top-6 -left-6 w-24 h-24 coastal-pattern opacity-60 rounded-full"></div>
                 <div class="absolute -bottom-6 -right-6 w-24 h-24 coastal-pattern opacity-60 rounded-full"></div>
-                <img src="/api/placeholder/600/400" alt="Mawono's Workshop" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="./images/mw-shop.jpg" alt="Mawono's Workshop" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
     </div>
@@ -403,7 +502,7 @@
                     </p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="/api/placeholder/50/50" alt="Customer" class="w-full h-full object-cover">
+                            <img src="./images/mary.jpg" alt="Customer" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <p class="font-semibold">Sarah M.</p>
@@ -426,7 +525,7 @@
                     </p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="/api/placeholder/50/50" alt="Customer" class="w-full h-full object-cover">
+                            <img src="./images/uk-man.jpg" alt="Customer" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <p class="font-semibold">John D.</p>
@@ -449,7 +548,7 @@
                     </p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="/api/placeholder/50/50" alt="Customer" class="w-full h-full object-cover">
+                            <img src="./images/eboso.jpg" alt="Customer" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <p class="font-semibold">Amina K.</p>
@@ -460,6 +559,69 @@
             </div>
         </div>
     </div>
+
+        <!-- Our Location -->
+<div class="container mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-center mb-10">Where to Find Us</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Map -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden h-96">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d350.1334049420355!2d39.8660499667853!3d-3.632687462366971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2ske!4v1742506797961!5m2!1sen!2ske"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+        <!-- Contact info -->
+        <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-semibold mb-4">Mawono's Blossom Workshop & Gallery</h3>
+            
+            <div class="space-y-4">
+                <div class="flex items-start">
+                    <div class="bg-rose-100 rounded-full p-3 text-rose-600 mr-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">Address</p>
+                        <p class="text-gray-600">Kilifi Town, Coastal Kenya</p>
+                        <p class="text-gray-600">Along Bofa Road</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-rose-100 rounded-full p-3 text-rose-600 mr-4">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">Phone</p>
+                        <p class="text-gray-600">+254 719 803 733</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-rose-100 rounded-full p-3 text-rose-600 mr-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">Hours</p>
+                        <p class="text-gray-600">Monday - Saturday: 9am - 6pm</p>
+                        <p class="text-gray-600">Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/+254719803733" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-300 mt-4">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                    Contact us via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
     
     <!-- Newsletter -->
     <div class="container mx-auto px-6 py-16">
@@ -478,10 +640,12 @@
             </div>
         </div>
     </div>
+
+
     
     <!-- WhatsApp Float Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/+254712345678" class="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+        <a href="https://wa.me/+254719803733" class="bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
             <i class="fab fa-whatsapp text-3xl"></i>
         </a>
     </div>
@@ -519,7 +683,7 @@
                         <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
+                        <a href="https://www.instagram.com/mawonos_blossom/" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors">
@@ -530,7 +694,7 @@
                         </a>
                     </div>
                     <p class="text-gray-400">
-                        <i class="fas fa-phone mr-2"></i> +254 712 345 678
+                        <i class="fas fa-phone mr-2"></i> +254 719 803 733
                     </p>
                     <p class="text-gray-400">
                         <i class="fas fa-envelope mr-2"></i> info@mawonosblossom.co.ke
@@ -566,9 +730,9 @@
                     </div>
                     <nav class="flex flex-col gap-4">
                         <a href="/" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Home</a>
-                        <a href="/gallery" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Gallery</a>
-                        <a href="/shop" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Shop</a>
-                        <a href="/about" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">About Us</a>
+                        <a href="/gallery.html" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Gallery</a>
+                        <a href="/shop.html" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Shop</a>
+                        <a href="/about.html" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">About Us</a>
                         <a href="/contact" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Contact</a>
                     </nav>
                     <div class="flex justify-around mt-6">
@@ -592,6 +756,30 @@
             
             document.querySelector('.close-menu').addEventListener('click', function() {
                 mobileMenu.classList.add('translate-x-full');
+            });
+
+            var swiper = new Swiper(".categorySwiper", {
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 1.2,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 3000,
+                    disableInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                640: { slidesPerView: 2 }, 
+                768: { slidesPerView: 3 }, 
+                1024: { slidesPerView: 4 }
+            }
             });
         });
     </script>
