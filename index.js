@@ -41,6 +41,11 @@ app.get('/shop', (req, res) => {
     res.render('shop/shop');
 })
 
+// Contact route
+app.get('/contact', (req, res) => {
+    res.render('contact/contact');
+})
+
 // Connect to mongodb
 async function connectDB(retries = 5) {
     for (let attempt = 1; attempt <= retries; attempt++) {
@@ -54,14 +59,13 @@ async function connectDB(retries = 5) {
                 console.log("Retrying in 5 seconds...");
                 await new Promise(res => setTimeout(res, 5000)); 
             } else {
-                console.error("Max retries reached. Exiting...");
-                process.exit(1); 
+                console.error("Max retries reached. Server will continue without database connection...");
             }
         }
     }
 }
 
-// connectDB();
+connectDB();
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

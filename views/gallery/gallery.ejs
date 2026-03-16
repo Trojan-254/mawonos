@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Mawono's Blossom | Coastal Treasures from Kilifi</title>
+    <title>Gallery | Munric Arts </title>
     <link rel="icon" type="image/jpg" href="favicon.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,18 +23,6 @@
         
         .logo-font {
             font-family: 'Pacifico', cursive;
-        }
-        
-        .coastal-pattern {
-            background-image: repeating-linear-gradient(
-                45deg,
-                #0ea5e9 0px,
-                #0ea5e9 15px,
-                #f59e0b 15px,
-                #f59e0b 30px,
-                #f43f5e 30px,
-                #f43f5e 45px
-            );
         }
         
         .gallery-card {
@@ -69,10 +57,17 @@
         }
 
         .hero-section {
-            background-image: url('/api/placeholder/1600/800');
             background-size: cover;
             background-position: center;
+            position: relative;
+            transition: background-image 1s ease-in-out;
         }
+
+        .gallery-hero-bg-1 { background-image: url('./images/chair.jpg'); }
+        .gallery-hero-bg-2 { background-image: url('./images/table.jpeg'); }
+        .gallery-hero-bg-3 { background-image: url('./images/storage.jpeg'); }
+        .gallery-hero-bg-4 { background-image: url('./images/study-table.jpg'); }
+        .gallery-hero-bg-5 { background-image: url('./images/pallete-bed-3.jpg'); }
 
         .pattern-bg {
             background-color: #fffbeb;
@@ -140,7 +135,7 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="/" class="flex items-center">
-                    <span class="logo-font text-3xl text-rose-600">Mawono's Blossom</span>
+                    <span class="logo-font text-3xl text-rose-600">Munric Arts</span>
                 </a>
                 
                 <!-- Desktop Navigation -->
@@ -176,16 +171,15 @@
     </nav>
     
     <!-- Hero Section -->
-    <div class="relative h-[50vh] hero-section overflow-hidden" style="background-image: url('/api/placeholder/1600/600');">
-        <div class="absolute inset-0 coastal-pattern opacity-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40"></div>
+    <div class="relative h-[50vh] hero-section gallery-hero-bg-1 overflow-hidden" id="galleryHeroSection">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
         <div class="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
             <div class="max-w-xl">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
                     Our Gallery
                 </h1>
                 <p class="text-white text-lg mb-8 opacity-90">
-                    Explore our collection of authentic Kenyan treasures, handcrafted by artisans from Kilifi
+                    Explore our collection of authentic unique, custom furniture.
                 </p>
                 
             </div>
@@ -201,17 +195,17 @@
                     <button data-category="all" class="category-button active px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
                         All Items
                     </button>
-                    <button data-category="artworks" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
-                        <i class="fas fa-palette mr-1"></i> Artworks
+                    <button data-category="chairs" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
+                        <i class="fas fa-chair mr-1"></i> Chairs
                     </button>
-                    <button data-category="jewelry" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
-                        <i class="fas fa-gem mr-1"></i> Jewelry
+                    <button data-category="storage" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
+                        <i class="fas fa-box mr-1"></i> Storage
                     </button>
-                    <button data-category="clothing" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
-                        <i class="fas fa-tshirt mr-1"></i> Clothing
+                    <button data-category="tables" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
+                        <i class="fas fa-table mr-1"></i> Tables
                     </button>
-                    <button data-category="hats" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
-                        <i class="fas fa-hat-cowboy mr-1"></i> Hats
+                    <button data-category="desks" class="category-button px-4 py-2 rounded-full border-2 border-gray-200 hover:border-rose-600 text-sm font-medium transition-colors">
+                        <i class="fas fa-desktop mr-1"></i> Desks
                     </button>
                 </div>
                 
@@ -271,131 +265,195 @@
             <!-- Grid View (Default) -->
             <div id="gridViewContainer" class="masonry-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Item 1 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="artworks">
-                    <a href="/api/placeholder/600/800" data-lightbox="gallery" data-title="Tribal Mask Carving">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/place-mask.jpg" alt="Tribal Mask Carving" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Place mask</h3>
-                                <p class="text-white/80 text-sm">Hand-carved wooden tribal mask</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 3,500</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="chairs" data-name="Handcrafted Chair" data-price="12000">
+                    <a href="../images/chair.jpg" data-lightbox="gallery" data-title="Handcrafted Chair">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/chair.jpg" alt="Handcrafted Chair" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Handcrafted Chair</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 12,000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Solid wood dining chair with ergonomic design</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 2 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="jewelry">
-                    <a href="/api/placeholder/800/600" data-lightbox="gallery" data-title="Cowrie Shell Necklace">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/cowries-shell-necklace.jpg" alt="Cowrie Shell Necklace" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Cowrie Shell Necklace</h3>
-                                <p class="text-white/80 text-sm">Handcrafted cowrie shell with brass</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 1,200</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="tables" data-name="Dining Table" data-price="35000">
+                    <a href="../images/table.jpeg" data-lightbox="gallery" data-title="Dining Table">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/table.jpeg" alt="Dining Table" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Dining Table</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 35,000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Spacious wooden dining table for family gatherings</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 3 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="hats">
-                    <a href="/api/placeholder/800/1000" data-lightbox="gallery" data-title="Woven Beach Hat">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/hat.jpg" alt="Woven Beach Hat" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Woven Beach Hat</h3>
-                                <p class="text-white/80 text-sm">Traditional handwoven palm leaf hat</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 1,800</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="storage" data-name="Storage Cabinet" data-price="18000">
+                    <a href="../images/storage.jpeg" data-lightbox="gallery" data-title="Storage Cabinet">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/storage.jpeg" alt="Storage Cabinet" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Storage Cabinet</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 18,000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Multi-shelf wooden storage cabinet with doors</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 4 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="clothing">
-                    <a href="/api/placeholder/800/900" data-lightbox="gallery" data-title="Kikoy Beach Dress">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/beach-dress.jpg" alt="Kikoy Beach Dress" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Kikoy Beach Dress</h3>
-                                <p class="text-white/80 text-sm">Lightweight cotton kikoy dress</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 2,500</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="desks" data-name="Study Desk" data-price="22000">
+                    <a href="../images/study-table.jpg" data-lightbox="gallery" data-title="Study Desk">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/study-table.jpg" alt="Study Desk" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Study Desk</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 22,000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Functional work desk with storage drawers</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 5 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="artworks">
-                    <a href="/api/placeholder/1000/800" data-lightbox="gallery" data-title="Coastal Painting">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/painting.jpg" alt="Coastal Painting" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Coastal Painting</h3>
-                                <p class="text-white/80 text-sm">Original artwork depicting coastal life</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 3,500</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="storage" data-name="TV Stand" data-price="25000">
+                    <a href="../images/tv-stand.jpg" data-lightbox="gallery" data-title="TV Stand">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/tv-stand.jpg" alt="TV Stand" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">TV Stand</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 25,000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Modern entertainment center with storage</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 6 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="jewelry">
-                    <a href="/api/placeholder/700/900" data-lightbox="gallery" data-title="Beaded Maasai Bracelet">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/maasai-b.jpg" alt="Beaded Maasai Bracelet" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Beaded Maasai Bracelet</h3>
-                                <p class="text-white/80 text-sm">Traditional Maasai beaded bracelet</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 800</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="tables" data-name="Bedside Table" data-price="7500">
+                    <a href="../images/sidebed-table.jpeg" data-lightbox="gallery" data-title="Bedside Table">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/sidebed-table.jpeg" alt="Bedside Table" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Bedside Table</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 7,500</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Compact side table with drawer storage</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 7 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="clothing">
-                    <a href="/api/placeholder/800/800" data-lightbox="gallery" data-title="Kitenge Shirt">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/afri-shirt.jpg" alt="Kitenge Shirt" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Kitenge Shirt</h3>
-                                <p class="text-white/80 text-sm">Men's Kitenge button-up shirt</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 1,800</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="storage" data-name="Painting Easel" data-price="8500">
+                    <a href="../images/paint-stand.jpg" data-lightbox="gallery" data-title="Painting Easel">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/paint-stand.jpg" alt="Painting Easel" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Painting Easel</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 8,500</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Adjustable wooden easel for artists</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Item 8 -->
-                <div class="gallery-card rounded-xl overflow-hidden shadow-lg" data-category="artworks">
-                    <a href="/api/placeholder/900/700" data-lightbox="gallery" data-title="Soapstone Sculpture">
-                        <div class="aspect-square md:aspect-auto overflow-hidden">
-                            <img src="../images/soapstone.jpg" alt="Soapstone Sculpture" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-                                <h3 class="text-white text-lg font-bold">Soapstone Sculpture</h3>
-                                <p class="text-white/80 text-sm">Hand-carved Kisii soapstone sculpture</p>
-                                <div class="flex mt-2">
-                                    <span class="bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded">KES 2,800</span>
-                                </div>
-                            </div>
+                <div class="gallery-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="chairs" data-name="Pallet Bed Frame" data-price="15000">
+                    <a href="../images/pallete-bed-3.jpg" data-lightbox="gallery" data-title="Pallet Bed Frame">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img src="../images/pallete-bed-3.jpg" alt="Pallet Bed Frame" class="w-full h-full object-cover">
                         </div>
                     </a>
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-gray-800 text-lg font-bold flex-1">Pallet Bed Frame</h3>
+                            <span class="bg-rose-600 text-white text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap ml-2">KES 15,000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Rustic reclaimed pallet bed with headboard</p>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-eye mr-1"></i> View
+                            </button>
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -413,7 +471,7 @@
                                 <span class="bg-rose-600 text-white px-3 py-1 rounded-full text-sm font-semibold">KES 3,500</span>
                             </div>
                             <p class="text-gray-600 mt-2">
-                                Hand-carved wooden tribal mask representing ancestral spirits, crafted by artisans in Kilifi using traditional techniques passed down through generations.
+                                Hand-carved wooden tribal mask representing ancestral spirits, crafted by artisans in  using traditional techniques passed down through generations.
                             </p>
                             <div class="mt-4">
                                 <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded mr-2 mb-2">#Artwork</span>
@@ -494,6 +552,201 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Gallery Hero Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryHeroSection = document.getElementById('galleryHeroSection');
+            const bgClasses = ['gallery-hero-bg-1', 'gallery-hero-bg-2', 'gallery-hero-bg-3', 'gallery-hero-bg-4', 'gallery-hero-bg-5'];
+            let currentBgIndex = 0;
+
+            function changeGalleryHeroBackground() {
+                galleryHeroSection.classList.remove(bgClasses[currentBgIndex]);
+                currentBgIndex = (currentBgIndex + 1) % bgClasses.length;
+                galleryHeroSection.classList.add(bgClasses[currentBgIndex]);
+            }
+
+            // Change background every 5 seconds
+            setInterval(changeGalleryHeroBackground, 5000);
+
+            // Gallery filtering and search
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const galleryCards = document.querySelectorAll('.gallery-card');
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const resultCount = document.getElementById('resultCount');
+            const sortOptions = document.getElementById('sortOptions');
+            
+            let currentCategory = 'all';
+            let currentSearchTerm = '';
+
+            // Category filter
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentCategory = this.getAttribute('data-category');
+                    filterAndSearchGallery();
+                });
+            });
+
+            // Search functionality
+            function performSearch() {
+                currentSearchTerm = searchInput.value.toLowerCase().trim();
+                filterAndSearchGallery();
+            }
+
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Real-time search as user types
+            searchInput.addEventListener('input', function() {
+                clearTimeout(window.searchTimeout);
+                window.searchTimeout = setTimeout(() => {
+                    currentSearchTerm = this.value.toLowerCase().trim();
+                    filterAndSearchGallery();
+                }, 300);
+            });
+
+            // Sort functionality
+            sortOptions.addEventListener('change', function() {
+                sortGallery(this.value);
+            });
+
+            function filterAndSearchGallery() {
+                let visibleCount = 0;
+
+                galleryCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    const name = card.getAttribute('data-name').toLowerCase();
+                    
+                    const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                    const matchesSearch = currentSearchTerm === '' || name.includes(currentSearchTerm);
+
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update result count
+                resultCount.textContent = visibleCount;
+
+                // Show message if no results
+                const noResultsMessage = document.getElementById('noResultsMessage');
+                if (visibleCount === 0) {
+                    if (!noResultsMessage) {
+                        const message = document.createElement('div');
+                        message.id = 'noResultsMessage';
+                        message.className = 'col-span-full text-center py-16';
+                        message.innerHTML = `
+                            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+                            <h3 class="text-2xl font-bold text-gray-600 mb-2">No items found</h3>
+                            <p class="text-gray-500">Try adjusting your filters or search term</p>
+                        `;
+                        document.getElementById('gridViewContainer').appendChild(message);
+                    }
+                } else {
+                    if (noResultsMessage) {
+                        noResultsMessage.remove();
+                    }
+                }
+            }
+
+            function sortGallery(sortType) {
+                const container = document.getElementById('gridViewContainer');
+                const cardsArray = Array.from(galleryCards);
+
+                cardsArray.sort((a, b) => {
+                    const priceA = parseInt(a.getAttribute('data-price'));
+                    const priceB = parseInt(b.getAttribute('data-price'));
+                    const nameA = a.getAttribute('data-name');
+                    const nameB = b.getAttribute('data-name');
+
+                    switch(sortType) {
+                        case 'price-low':
+                            return priceA - priceB;
+                        case 'price-high':
+                            return priceB - priceA;
+                        case 'newest':
+                            return 0; // Keep original order
+                        case 'oldest':
+                            return 0; // Reverse would go here if we had dates
+                        default:
+                            return 0;
+                    }
+                });
+
+                // Re-append sorted cards
+                cardsArray.forEach(card => container.appendChild(card));
+            }
+
+            // View switcher (grid/list)
+            const gridViewBtn = document.getElementById('gridView');
+            const listViewBtn = document.getElementById('listView');
+            const gridViewContainer = document.getElementById('gridViewContainer');
+            const listViewContainer = document.getElementById('listViewContainer');
+
+            if (gridViewBtn && listViewBtn) {
+                gridViewBtn.addEventListener('click', function() {
+                    gridViewContainer.classList.remove('hidden');
+                    listViewContainer.classList.add('hidden');
+                    gridViewBtn.classList.add('active', 'bg-rose-600', 'text-white');
+                    gridViewBtn.classList.remove('bg-white', 'text-gray-600');
+                    listViewBtn.classList.remove('active', 'bg-rose-600', 'text-white');
+                    listViewBtn.classList.add('bg-white', 'text-gray-600');
+                });
+
+                listViewBtn.addEventListener('click', function() {
+                    gridViewContainer.classList.add('hidden');
+                    listViewContainer.classList.remove('hidden');
+                    listViewBtn.classList.add('active', 'bg-rose-600', 'text-white');
+                    listViewBtn.classList.remove('bg-white', 'text-gray-600');
+                    gridViewBtn.classList.remove('active', 'bg-rose-600', 'text-white');
+                    gridViewBtn.classList.add('bg-white', 'text-gray-600');
+                });
+            }
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'mobile-menu fixed inset-0 bg-black/50 z-50 transform translate-x-full transition-transform duration-300';
+            mobileMenu.innerHTML = `
+                <div class="bg-white h-full max-w-xs ml-auto p-6 flex flex-col">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="logo-font text-2xl text-rose-600">Munric Arts</span>
+                        <button class="text-slate-700 hover:text-rose-600 focus:outline-none close-menu">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <nav class="flex flex-col gap-4">
+                        <a href="/" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Home</a>
+                        <a href="/gallery" class="font-medium p-2 bg-rose-50 text-rose-600 rounded-lg transition-colors">Gallery</a>
+                        <a href="/shop" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Shop</a>
+                        <a href="/about" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">About Us</a>
+                        <a href="/contact" class="font-medium p-2 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors">Contact</a>
+                    </nav>
+                </div>
+            `;
+            document.body.appendChild(mobileMenu);
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('translate-x-full');
+            });
+            
+            document.querySelector('.close-menu').addEventListener('click', function() {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
                 
 
 </body>
